@@ -25,7 +25,7 @@ if flag_plot.Cout==1
     show_spinup=0;
     
     % figure
-    figure(1)
+    figure(101)
     
     % plot the measured and modeled timeseries
     hold on
@@ -59,7 +59,7 @@ if flag_plot.Cout==1
 %     Yresmax=max(absres)+0.05*abs(meanres); %max YLim for the error axes
 %     Yresmin=-max(absres)-0.05*abs(meanres); %min YLim for the error axes
 % 
-%     figure(99)
+%     figure(102)
 %     hold all    
 %     l1=line([0,data.dates(end)-data.dates(1)],[meanres,meanres],...
 %         'Color',[.8 .8 .8],'DisplayName','+/- mean residual');
@@ -92,7 +92,7 @@ if flag_plot.TTDs==1 && ~isempty(data.index_datesel)==1
     end
     
     
-    figure(2)
+    figure(103)
     
     % plot with the pdf's
     subplot(1,2,1)
