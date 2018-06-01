@@ -9,9 +9,8 @@ computes streamflow age and concentration.
 The package is introduced and discussed in: 
 Benettin, P., & Bertuzzo, E. (2018). tran-SAS v1.0: a numerical model 
 to compute catchment-scale hydrologic transport using StorAge Selection 
-functions. Geoscientific Model Development Discussions, (January), 1–19. 
-https://doi.org/10.5194/gmd-2017-305
-
+functions. Geoscientific Model Development, 11(4), 1627–1639. 
+https://doi.org/10.5194/gmd-11-1627-2018
 
 A theoretical overview of the approach can be found in: Rinaldo, A., 
 Benettin, P., Harman, C. J., Hrachowitz, M., McGuire, K. J., van 
