@@ -1,5 +1,13 @@
 %**************************************************************************
 % STARTER PROGRAM for the transport model based on SAS functions.
+% The code is described in:
+% 
+% The numerical model is described by:
+% Benettin, P., & Bertuzzo, E. (2018). tran-SAS v1.0: a numerical model 
+% to compute catchment-scale hydrologic transport using StorAge Selection 
+% functions. Geoscientific Model Development, 11(4), 1627–1639. 
+% https://doi.org/10.5194/gmd-11-1627-2018
+%
 % The codes implements the transport model described by:
 % Rinaldo, A., Benettin, P., Harman, C. J., Hrachowitz, M., McGuire, K. J.,
 % van der Velde, Y., Bertuzzo, E., and Botter, G. (2015). Storage selection 
@@ -35,7 +43,7 @@ datasetName='testdata.dat';  %text file with data (check formatting specs)
 ModelName='SAS_EFs';         %model to be run (SAS_EFs and SAS_odesolver are available)
 
 % two model implementations are available:
-% 1-SAS_EFs, which includes a (modified) Euler Formward solution 
+% 1-SAS_EFs, which includes a (modified) Euler Forward solution 
 % 2-SAS_odesolver, which uses Matlab built-in ode solvers. The numerical 
 % accuracy is improved but the code runs > 50 times slower
 

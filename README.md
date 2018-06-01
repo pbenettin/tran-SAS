@@ -6,12 +6,12 @@ functions. The model addresses the transport of a conservative solute
 through a hydrologic system (e.g., a catchment or a lysimeter) and 
 computes streamflow age and concentration.  
 
-The article that introduces and verifies the package is currently 
-under open discussion: Benettin, P. and Bertuzzo, E.: tran-SAS v1.0: 
-a numerical model to compute catchment-scale hydrologic transport 
-using StorAge Selection functions, Geosci. Model Dev. Discuss.,
- https://doi.org/10.5194/gmd-2017-305, in review, 2018. 
-(open discussion at https://www.geosci-model-dev-discuss.net/gmd-2017-305/) 
+The package is introduced and discussed in: 
+Benettin, P., & Bertuzzo, E. (2018). tran-SAS v1.0: a numerical model 
+to compute catchment-scale hydrologic transport using StorAge Selection 
+functions. Geoscientific Model Development Discussions, (January), 1–19. 
+https://doi.org/10.5194/gmd-2017-305
+
 
 A theoretical overview of the approach can be found in: Rinaldo, A., 
 Benettin, P., Harman, C. J., Hrachowitz, M., McGuire, K. J., van 
