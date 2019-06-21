@@ -3,7 +3,7 @@
 % and evapotranspiration. 
 % Details on the model variables can be found at the bottom of the file
 
-function SAS_EFs(Pars,data)
+function out = SAS_EFs(Pars,data)
 
 
 %--------------------------------------------------------------------------
@@ -115,6 +115,28 @@ for j=1:NN-1
 %     Fyw(j+1)=Omega_Q(min(length(pQ),round(ywt*24/data.dt)));
 
     
+end
+
+
+
+%--------------------------------------------------------------------------
+% assign model function output
+%--------------------------------------------------------------------------
+
+% first check if data.outputchoice exists or not
+if isfield(data,'outputchoice')~=0
+
+    % assign the function output
+    if strcmp(data.outputchoice,'C_Qsampl')==1 %modeled concentration during measurements only
+        out=C_Q(data.indexC_Q); 
+    elseif strcmp(data.outputchoice,'C_Qmodel')==1 %all model values
+        out=C_Q; 
+    else
+        out='no output assigned';
+    end
+    
+    % (can define any other function output of your choice)
+
 end
 
 

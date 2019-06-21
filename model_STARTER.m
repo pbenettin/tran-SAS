@@ -71,7 +71,7 @@ load_output=1;       %display the output at the end: 1=yes
 % (automatic) hourly data are imported from textfile 'datasetName' into cell array A
 fid=fopen(datasetName);
 A=textscan(fid,...
-    '%16c %f %f %f %f %f %f',...
+    '%16c %f %f %f %f %f %f %*[^\n]',...
     'HeaderLines',1); %dates,J,Q,ET,Cin,wi,measC_Q
 fclose(fid);
 
@@ -99,6 +99,9 @@ if example==1
     SASQparamnames={'k_Q'};      Pars(1)=0.7;  %[-]
     SASETparamnames={'k_ET'};    Pars(2)=0.7;  %[-]
     otherparamnames={'S0'};      Pars(3)=1000; %[mm]
+    
+    % assign the concentration of the initial storage
+    data.C_S0=50;   
 end
 
 % EXAMPLE 2: SASQ with time-variant power-law shape
@@ -111,6 +114,9 @@ if example==2
     SASQparamnames={'kmin_Q','kmax_Q'}; Pars(1:2)=[0.3,0.9]; %[-]
     SASETparamnames={'beta_ET'};        Pars(3)=1; %[-]
     otherparamnames={'S0'};             Pars(4)=1000; %[mm]
+    
+    % assign the concentration of the initial storage
+    data.C_S0=50;      
 end
 
 % EXAMPLE 3 : SASQ with Beta shape
@@ -123,6 +129,9 @@ if example==3
     SASQparamnames={'alpha','beta'};    Pars(1:2)=[1.5,0.8]; %[-]
     SASETparamnames={'beta_ET'};        Pars(3)=1; %[-]
     otherparamnames={'S0'};             Pars(4)=1000; %[mm]
+    
+    % assign the concentration of the initial storage
+    data.C_S0=50;  
 end
 
 
@@ -179,9 +188,6 @@ data.index_datesel=tmp(tmp>0);
 % 5-INITIAL CONDITIONS
 %--------------------------------------------------------------------------
 
-% assign the concentration of the initial storage
-data.C_S0=50;   
-
 % spinup settings (only used if create_spinup=1)
 period_rep=[1,365*4]; %starting and ending day of the datasets which will be repeated
 n_rep=1; % (integer) number of times that period_rep will be repeated; if n_rep=0, then no spinup is created
@@ -203,11 +209,16 @@ end
 data.f_thresh=f_thresh;       %pass storage threshold information to the model
 data.save_output=save_output;  %pass saving information to the model
 
+% define which output you want to be returned by the model function. Currently available:
+% 'C_Qsampl': modeled data during time steps with measurements only
+% 'C_Qmodel': modeled data over all time steps
+data.outputchoice='C_Qsampl'; 
+
 % let's go for the model run
 disp(' ')
 disp('calculating model output...')
 tic
-feval(ModelName,Pars,data) %run the model 'ModelName' using parameters 'Pars' and data 'data'
+out=feval(ModelName,Pars,data); %run the model 'ModelName' using parameters 'Pars' and data 'data'
 toc
 
 

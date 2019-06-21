@@ -2,7 +2,7 @@
 % solver (defined as an external function outside the main model loop)
 % details on the model variables at the bottom of the file
 
-function SAS_odesolver(Pars,data)
+function out = SAS_odesolver(Pars,data)
 
 
 %--------------------------------------------------------------------------
@@ -110,6 +110,30 @@ for j=1:NN-1
 
 
 end
+
+
+
+%--------------------------------------------------------------------------
+% assign model function output
+%--------------------------------------------------------------------------
+
+% first check if data.outputchoice exists or not
+if isfield(data,'outputchoice')~=0
+
+    % assign the function output
+    if strcmp(data.outputchoice,'C_Qsampl')==1 %modeled concentration during measurements only
+        out=C_Q(data.indexC_Q); 
+    elseif strcmp(data.outputchoice,'C_Qmodel')==1 %all model values
+        out=C_Q; 
+    else
+        out='no output assigned';
+    end
+    
+    % (can define any other function output of your choice)
+
+end
+
+
 
 
 

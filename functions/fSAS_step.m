@@ -1,6 +1,8 @@
-function Om = fSAS_pl(Ps,par,~)
-% function to compute a pl (power) fSAS function: Om = Ps^k
-% Om = fSAS_pl(Ps,par=[k])         %power function with fixed exponent k
+function Om = fSAS_step(Ps,par,~)
+% function to compute a step fSAS function 
+% note this is a "left" step, so the function is uniform up to a point Ps=u
+% Om = Ps/u if Ps<u, Om = 1 if Ps>=u
+% Om = fSAS_pl(Ps,par=[u])    %u defines the interval where Om is linear
 
 % Synopsis
 % Om = the cumulative Omega function, evaluated over each element of Ps
@@ -12,14 +14,15 @@ function Om = fSAS_pl(Ps,par,~)
 if length(par)~=1 %error in parameter input
     error('wrong number of input parameters')
 end
-if any(par)<0
-    error('parameter of the power-law function must be positive')
+if any(par)<=0 && any(par)>1
+    error('parameter of the step function must be 0 < par <=1')
 end
 
 % assign the variables
-k=par(1);
+u=par(1);
 
 % compute omega
-Om=Ps.^k;    
+Om=Ps./u;
+Om(Ps>=u)=1;
 
 end

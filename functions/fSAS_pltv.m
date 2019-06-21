@@ -1,6 +1,6 @@
 function Om = fSAS_pltv(Ps,par,wi)
-% function to compute a pl (power-law) fSAS function: Om = Ps^k(wi)
-% Om = fSAS_pl(Ps,par=[kmin,kmax],wi)  %power law with variable exponent 
+% function to compute a pl (power) fSAS function: Om = Ps^k(wi)
+% Om = fSAS_pl(Ps,par=[kmin,kmax],wi)  %power function with variable exponent 
 % between kmin and kmax, depending on the system state wi
 
 % Synopsis

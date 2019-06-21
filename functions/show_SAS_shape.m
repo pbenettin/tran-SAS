@@ -5,13 +5,13 @@
 example=1; %can choose between 1,2 and 3
 
 
-% EXAMPLE 1 : SASQ with fixed power-law shape (one parameter)
+% EXAMPLE 1 : SASQ with fixed power-function shape (one parameter)
 if example==1
     SASname='fSAS_pl'; 
     SASpar=0.5;
 end
 
-% EXAMPLE 2: SASQ with time-variant power-law shape (two parameters)
+% EXAMPLE 2: SASQ with time-variant power-function shape (two parameters)
 if example==2
     SASname='fSAS_pltv'; 
     SASpar=[0.4,0.8];
