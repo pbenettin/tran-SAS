@@ -26,13 +26,17 @@ if flag_plot.Cout==1
     
     % figure
     figure(101)
+    hold on
     
     % plot the measured and modeled timeseries
-    hold on
-    stairs(data.dates(data.C_J~=0),data.C_J(data.C_J~=0),'-','MarkerSize',3,...
-        'DisplayName','input','Color',[.8 .8 .8])
-    plot(data.dates(data.indexC_Q),data.measC_Q,'og','DisplayName','measured',...
-        'MarkerSize',3,'MarkerEdgeColor',[.5 1 .5],'MarkerFaceColor','g')
+    if ~exist('p1','var') %avoid replotting the data if it is already in the plot
+        stairs(data.dates(data.C_J~=0),data.C_J(data.C_J~=0),'-','MarkerSize',3,...
+            'DisplayName','input','Color',[.8 .8 .8])
+        p1=plot(data.dates(data.indexC_Q),data.measC_Q,'og','DisplayName','measured',...
+            'MarkerSize',3,'MarkerEdgeColor',[.5 1 .5],'MarkerFaceColor','g');
+    end
+    
+    % plot the modeled timeseries
     plot(data.dates,C_Q,'-','DisplayName','modeled (continuous)')
     plot(data.dates(data.indexC_Q),C_Q(data.indexC_Q),'o','DisplayName',...
         'modeled (during measurements)',...
