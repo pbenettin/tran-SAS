@@ -12,12 +12,15 @@ to compute catchment-scale hydrologic transport using StorAge Selection
 functions. Geoscientific Model Development, 11(4), 1627–1639. 
 https://doi.org/10.5194/gmd-11-1627-2018
 
-A theoretical overview of the approach can be found in: Rinaldo, A., 
-Benettin, P., Harman, C. J., Hrachowitz, M., McGuire, K. J., van 
-der Velde, Y., Bertuzzo, E., and Botter, G. (2015). Storage 
-selection functions: A coherent framework for quantifying 
-how catchments store and release water and solutes. Water Resources 
-Research, 51(6), 4840–4847. http://doi.org/10.1002/2015WR017273  
+The code is compatible with MATLAB versions after R2018a.
 
+## Running the model
 
-The code is compatible with all MATLAB versions after R2010a.
+The current model version can be run by executing the script `model_STARTER.m`. The starter will search the file `case_study_name.txt` for the name of the case study to run. Then, it will read the associated configuration file (case_studies > {case study name} > `config_file.m`) and run the model according to that configuration. Some test synthetic datasets (`TestData` and `TestData_SteadyState`) are provided as illustrative case studies. You can modify the model parameters and simulation settings through the configuration file.
+
+To run the model on your own data, you need to prepare a new case study:
+
+- create a new directory inside the 'case_studies' folder
+- prepare a .csv data table formatted as the example testdata.csv (see also the associated README file)
+- fill-in a config_file for your case study
+- write the new case study name into the text file case_study_name.txt, such that the model starter selects the right case study
