@@ -1,0 +1,13 @@
+# Automatic README file generated for 'testdata.csv'
+
+The file 'testdata.csv' includes tabular data at hourly timesteps:
+
+- date, formatted as datetime dd-mmm-yyyy HH:MM:SS (e.g. 01-Jan-2020 00:00:00)
+- J, precipitation in mm/h
+- Q, streamflow in mm/h
+- ET, evapotranspiration in mm/h
+- Cin, input tracer concentration
+- wi, indicator of wetness index, non-dimensional and confined within [0-1]. Here, it is the storage normalized to [0-1]
+- measC_Q, output sampled concentration
+
+Missing values are indicates as NaN
