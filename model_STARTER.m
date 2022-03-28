@@ -40,7 +40,6 @@ run(fullfile(data.case_study_path,'config_file'))
 % model through a structure named 'data'
 data.f_thresh=f_thresh;       
 data.save_output=save_output; 
-data.extract_agedistrib=extract_agedistrib;
 data.outfilename = outfilename;
 
 % hourly data are imported from csv file 'datasetName' and aggregated to

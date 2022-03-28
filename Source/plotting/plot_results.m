@@ -26,6 +26,7 @@ if data.show_spinup==0
     t_1=data.dates(1)+data.ini_shift*data.dt/24; %avoid showing the spinup
     C_Q(1:data.ini_shift) = NaN; %discard results during spinup
     Fyw(1:data.ini_shift,:) = NaN; %discard results during spinup
+    med(1:data.ini_shift,:) = NaN; %discard results during spinup
 else
     t_1=data.dates(1);
 end
@@ -45,11 +46,6 @@ if flag_plot.TTDs==1 && ~isempty(data.index_datesel)==1
     run('plot_TTDs.m') 
 end
     
-% select the Fyw you want to display
-ii_sel = 1:length(ywt); %this is to display them all
-%ii_sel = [2,3]; %selection of ywt to be shown
-
-
 % FIGURE: ADDITIONAL AGE STATISTICS
 if flag_plot.agestats==1
     run('plot_agestats.m')  

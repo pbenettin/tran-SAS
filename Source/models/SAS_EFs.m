@@ -113,7 +113,7 @@ for j=1:NN-1
     for i=1:length(pp)
         med(j+1,i)=find(Omega_Q>=pp(i),1,'first');
     end
-     
+
     % ex3-compute some young water fractions    
     ywt = [7, 60, 90]; %young water threshold [days]
     for i=1:length(ywt)

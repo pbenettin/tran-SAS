@@ -22,6 +22,8 @@ linkaxes([ax1,ax2],'x')
 
 
 % show the young water fraction (Fyw)
+ii_sel = 1:length(ywt); %this is to display them all (otherwise can make a selection)
+
 figure
 
 % plot 1: discharge
