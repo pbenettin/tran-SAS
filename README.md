@@ -16,7 +16,7 @@ The code is compatible with MATLAB versions after R2018a.
 
 ## Running the model
 
-The current model version can be run by executing the script `model_STARTER.m`. The starter will search the file `case_study_name.txt` for the name of the case study to run. Then, it will read the associated configuration file (case_studies > {case study name} > `config_file.m`) and run the model according to that configuration. Some test synthetic datasets (`TestData` and `TestData_SteadyState`) are provided as illustrative case studies. You can modify the model parameters and simulation settings through the configuration file.
+The current model version can be run by executing the script `model_STARTER.m`. The starter will search the file `case_study_name.txt` for the name of the case study to run. Then, it will read the associated configuration file (case_studies > {case study name} > `config_file.m`) and run the model according to that configuration. A synthetic dataset (`TestData`) is provided for testing. You can modify the model parameters and simulation settings through the configuration file.
 
 To run the model on your own data, you need to prepare a new case study:
 
