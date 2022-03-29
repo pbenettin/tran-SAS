@@ -18,4 +18,6 @@ slprj/
 ##---------------------------------------------------
 ## Remove temp files and folders
 ##---------------------------------------------------
-*all_output.mat
+
+# default output name
+all_output.mat
