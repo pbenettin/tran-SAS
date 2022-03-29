@@ -16,6 +16,6 @@ slprj/
 
 
 ##---------------------------------------------------
-## Remove temp folders
+## Remove temp files and folders
 ##---------------------------------------------------
-old_stuff
+*all_output.mat

@@ -12,11 +12,17 @@ to compute catchment-scale hydrologic transport using StorAge Selection
 functions. Geoscientific Model Development, 11(4), 1627–1639. 
 https://doi.org/10.5194/gmd-11-1627-2018
 
-The code is compatible with MATLAB versions after R2018a.
+The code is expected to be compatible with all MATLAB versions after R2018a and likely also with earlier versions. No toolboxes are used by default, but the use of some probability density functions (e.g. the beta distribution) requires the Statistics Toolbox.
 
-## Running the model
+## Versions
 
-The current model version can be run by executing the script `model_STARTER.m`. The starter will search the file `case_study_name.txt` for the name of the case study to run. Then, it will read the associated configuration file (case_studies > {case study name} > `config_file.m`) and run the model according to that configuration. A synthetic dataset (`TestData`) is provided for testing. You can modify the model parameters and simulation settings through the configuration file.
+- v2.0: the code at the heart of the package is unchanged, but the code organization has been reformatted to make development and applications easier. The documentation has not yet been updated.
+
+- v1.0: original release, described by Benettin and Bertuzzo (2018). The code is mainly intended for educational use and the user needs to adapt the code to use it on a case study.
+
+## Running the model (version v2.0)
+
+The current model version can be run by executing the script `model_STARTER.m`. The starter will open the file `case_study_name.txt` to read the name of the case study to run. Then, it will read the associated configuration file (case_studies > {case study name} > `config_file.m`) and run the model according to that configuration. A synthetic dataset (`TestData`) is provided for testing. You can modify the model parameters and simulation settings through the configuration file.
 
 To run the model on your own data, you need to prepare a new case study:
 
