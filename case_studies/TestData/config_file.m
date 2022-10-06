@@ -3,7 +3,7 @@
 % GENERAL SIMULATION SETTINGS
 % select the CASE STUDY and the MODEL
 datasetName = 'testdata.csv'; 
-ModelName = 'SAS_EFs';  %weathering model with isotope fractionation
+ModelName = 'SAS_EFs';  %'SAS_EFs' is a modified euler forward scheme, 'SAS_odesolver' is a more accurate but slower solver
 outfilename = 'all_output';     %output filename (both for .mat and .csv outputs)
 
 % select the AGGREGATION timestep and the STORAGE threshold (numerical parameters)
@@ -25,7 +25,7 @@ export_output = false;        %print output to csvfile
 
 % MODEL PARAMETERS
 % select the SAS
-data.SASQName='fSAS_pltv'; %time-variant power-law SAS
+data.SASQName='fSAS_pltv'; %time-variant power-function SAS
 data.SASETName='fSAS_step'; %step SAS
 
 % set parameter names and values

@@ -12,8 +12,8 @@ function Om = fSAS_pl(Ps,par,~)
 if length(par)~=1 %error in parameter input
     error('wrong number of input parameters')
 end
-if any(par)<0
-    error('parameter of the power-law function must be positive')
+if any(par<0)
+    error('parameter of the power function must be positive')
 end
 
 % assign the variables

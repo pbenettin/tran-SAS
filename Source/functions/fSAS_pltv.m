@@ -25,8 +25,8 @@ k=kmin+(1-sstate)*(kmax-kmin);
 if length(par)~=2 %error in parameter input
     error('wrong number of input parameters')
 end
-if any(par)<0
-    error('parameters of the power-law function must be positive')
+if any(par<0)
+    error('parameters of the power function must be positive')
 end
 
 

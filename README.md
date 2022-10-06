@@ -1,16 +1,8 @@
 # tran-SAS
 
-The tran-SAS package includes a set of MATLAB codes to compute 
-catchment-scale hydrologic transport using StorAge Selection (SAS) 
-functions. The model addresses the transport of a conservative solute 
-through a hydrologic system (e.g., a catchment or a lysimeter) and 
-computes streamflow age and concentration.  
+The tran-SAS package includes a set of MATLAB codes to compute catchment-scale hydrologic transport using StorAge Selection (SAS) functions. The model addresses the transport of a conservative solute through a hydrologic system (e.g., a catchment or a lysimeter) and computes streamflow age and concentration.  
 
-The package is introduced and discussed in: 
-Benettin, P., & Bertuzzo, E. (2018). tran-SAS v1.0: a numerical model 
-to compute catchment-scale hydrologic transport using StorAge Selection 
-functions. Geoscientific Model Development, 11(4), 1627–1639. 
-https://doi.org/10.5194/gmd-11-1627-2018
+The package is introduced and discussed in: Benettin, P., & Bertuzzo, E. (2018). tran-SAS v1.0: a numerical model to compute catchment-scale hydrologic transport using StorAge Selection functions. Geoscientific Model Development, 11(4), 1627–1639. https://doi.org/10.5194/gmd-11-1627-2018
 
 The code is expected to be compatible with all MATLAB versions after R2018a and likely also with earlier versions. No toolboxes are used by default, but the use of some probability density functions (e.g. the beta distribution) requires the Statistics Toolbox.
 
